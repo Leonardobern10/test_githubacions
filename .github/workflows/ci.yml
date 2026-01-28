@@ -9,9 +9,18 @@ on:
 
 # Etapas do pipeline
 jobs:
-  hello:
+  primeiro_job:
     # Maquina virtual que executa os pipeline
     runs-on: ubuntu-latest
     steps: # Etapas do pipeline
-      - run: echo "Repo [${{github.repository}}] | Branch [${{github.ref_name}}] | Commit [${{github.sha}}]"
-      - run: "echo 'CI funcionando corretamente'"
+      - name: Checkout do Código
+        uses: actions/checkout@v4
+
+      - name: Listar arquivos do repositório
+        run: ls -la
+
+      - name: Log de contexto
+        run: |
+          echo "Repo - [${{github.repository}}]"
+          echo "Branch - [${{github.ref_name}}]"
+          echo "Commit - [${{github.sha}}]"
