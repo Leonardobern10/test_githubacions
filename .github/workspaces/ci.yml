@@ -1,0 +1,13 @@
+# nome do pipeline
+name: Primeiro CI
+
+# Evento de disparo
+on: [push] # Sempre que houver um push o pipeline dispara
+
+# Etapas do pipeline
+jobs:
+  hello:
+    # Maquina virtual que executa os pipeline
+    runs-on: ubuntu-latest
+    steps: # Etapas do pipeline
+      - run: echo "CI funcionando"
