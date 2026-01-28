@@ -13,5 +13,5 @@ jobs:
     # Maquina virtual que executa os pipeline
     runs-on: ubuntu-latest
     steps: # Etapas do pipeline
-      - run: "echo Repo: ${{github.repository}} | Branch: ${{github.ref_name}} | Commit: ${{github.sha}}"
+      - run: echo "Repo [${{github.repository}}] | Branch [${{github.ref_name}}] | Commit [${{github.sha}}]"
       - run: "echo 'CI funcionando corretamente'"
